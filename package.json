@@ -3,5 +3,23 @@
     "express-handlebars": "^6.0.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "techblog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Auzz24/TechBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Auzz24/TechBlog/issues"
+  },
+  "homepage": "https://github.com/Auzz24/TechBlog#readme"
 }
