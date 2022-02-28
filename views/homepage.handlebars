@@ -1,12 +1,14 @@
 <ol class="blogList">
+    {{#each post as |post|}}
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
-        <p>Posted by: {{{user.username}}}</p>
-        <p>Posted at: {{{created_at}}}</p>
+        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+        <span>({{post.post_url}})</span>
+        <p>Posted by: {{{post.user.username}}}</p>
+        <p>Posted at: {{{post.created_at}}}</p>
       </div>
     </article>
   </li>
+  {{/each}}
 </ol>

@@ -1,15 +1,33 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
+const { Post, User } = require('../models');
+
 
 router.get('/', (req, res) => {
-  res.render('homepage',{
-		title: 'Crypto the new Dollar',
-		post_url: 'https://crypto.com',
-		id: 4,
-		created_at: new Date(),
-		user: {
-			username: 'ashBrownie'
-  }
-});
+  console.log('======================');
+  Post.findAll({
+    attributes: [
+      'title',
+      'post_url',
+      'id',
+      'created_at'
+    ],
+    include:[
+      {
+      model: User,
+      attributes:['username']
+    }
+  ]
+  })
+  .then(dbPostData => {
+    const posts = dbPostData.map(post => post.get({ plain: true }));
+
+    res.render('homepage', { posts });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router; 
