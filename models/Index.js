@@ -12,3 +12,5 @@ User.hasMany(Post, {
   });
 
   module.exports = { User, Post};
+
+  //adding so i can push
