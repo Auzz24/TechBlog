@@ -6,18 +6,18 @@ const { Post, User } = require('../models');
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
-    attributes: [
-      'title',
-      'post_url',
-      'id',
-      'created_at'
-    ],
-    include:[
-      {
-      model: User,
-      attributes:['username']
-    }
-  ]
+  //   attributes: [
+  //     'title',
+  //     'post_url',
+  //     'id',
+  //     'created_at'
+  //   ],
+  //   include:[
+  //     {
+  //     model: User,
+  //     attributes:['username']
+  //   }
+  // ]
   })
   .then(dbPostData => {
     const posts = dbPostData.map(post => post.get({ plain: true }));
