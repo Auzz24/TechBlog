@@ -27,6 +27,11 @@ const userdata = [
     email: 'jmr@imdb.com',
     password: 'password123'
   },
+  {
+    username: 'jmr3847',
+    email: 'jmrfefewf@imdb.com',
+    password: 'password123'
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
